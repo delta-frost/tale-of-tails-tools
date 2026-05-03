@@ -66,25 +66,14 @@ const standardMoods = [
 // Optional moon‑touched moods — works the same way
 const moonMoods = [
   {
-    name: "Lunatic Frenzy",
+    name: "Frenzied",
     plus: [
       "More likely to attack without warning",
       "More likely to chase prey far beyond normal range"
     ],
     minus: [
       "Less likely to recognise friend from foe",
-      "Less likely to control the shift (if a werewolf)"
-    ]
-  },
-  {
-    name: "Moon‑Blessed Calm",
-    plus: [
-      "More likely to heal quickly",
-      "More likely to sense spirits"
-    ],
-    minus: [
-      "Less likely to act aggressively",
-      "Less likely to be affected by fear effects"
+      "Less likely to show mercy to competitors"
     ]
   },
   {
@@ -148,7 +137,7 @@ const themeSelect = document.getElementById('themeSelect');
 
 function applyTheme(themeClass) {
   // Remove any existing theme class from <html>
-  document.documentElement.classList.remove('theme-modern-dark', 'theme-wilderness');
+  document.documentElement.classList.remove('theme-ancient-parchment', 'theme-moonlit-howl', 'theme-feral-wilds');
   if (themeClass) {
     document.documentElement.classList.add(themeClass);
   }
@@ -156,26 +145,29 @@ function applyTheme(themeClass) {
 
 // Listen for dropdown changes
 themeSelect.addEventListener('change', (e) => {
-  const selected = e.target.value;
-  if (selected === 'modern-dark') {
-    applyTheme('theme-modern-dark');
-    localStorage.setItem('wolfMoodTheme', 'theme-modern-dark');
-  } else if (selected === 'wilderness') {
-    applyTheme('theme-wilderness');
-    localStorage.setItem('wolfMoodTheme', 'theme-wilderness');
-  }
+  const selected = e.target.value;               // e.g. "theme-ancient-parchment"
+  applyTheme(selected);
+  localStorage.setItem('wolfMoodTheme', selected);
 });
 
-// On page load, restore saved theme or default to modern-dark
+// On page load, restore saved theme or default to Ancient Parchment
 window.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('wolfMoodTheme');
-  if (saved && (saved === 'theme-modern-dark' || saved === 'theme-wilderness')) {
+  const validThemes = [
+    'theme-ancient-parchment',
+    'theme-moonlit-howl',
+    'theme-feral-wilds'
+  ];
+
+  if (saved && validThemes.includes(saved)) {
     applyTheme(saved);
-    themeSelect.value = saved === 'theme-modern-dark' ? 'modern-dark' : 'wilderness';
+    themeSelect.value = saved;
   } else {
     // Default
-    applyTheme('theme-modern-dark');
-    themeSelect.value = 'modern-dark';
+    const defaultTheme = 'theme-ancient-parchment';
+    applyTheme(defaultTheme);
+    themeSelect.value = defaultTheme;
   }
+  
   generateMood();
 });
