@@ -1,189 +1,107 @@
 /* ============================================
-   THEME DEFINITIONS
-   Each theme sets CSS custom properties.
-   Change colours here to craft new looks.
+   FONT IMPORTS (for the new themes)
+   Add these at the top of your CSS file,
+   or just keep them together here.
 ============================================ */
-
-/* Default: Modern Dark (your original look) */
-:root,
-.theme-modern-dark {
-  --bg: #1a1c29;
-  --container-bg: #2a2d3e;
-  --text: #e0e0e0;
-  --text-secondary: #bbb;
-  --accent: #c9b1ff;
-  --accent-dim: #5e4b8b;
-  --accent-hover: #7a62a8;
-  --button-bg: #5e4b8b;
-  --button-hover: #7a62a8;
-  --button-secondary-bg: #3b4d61;
-  --button-text: white;
-  --positive-color: #7ecd7e;
-  --negative-color: #e07b7b;
-  --notes-bg: #222433;
-  --notes-border: #7a62a8;
-  --shadow: rgba(100, 100, 255, 0.25);
-}
-
-/* Wilderness – browns, golds, greens */
-.theme-wilderness {
-  --bg: #1f2818;
-  --container-bg: #2a3322;
-  --text: #d4c9a3;
-  --text-secondary: #b1a882;
-  --accent: #c9a02b;
-  --accent-dim: #5a4c2b;
-  --accent-hover: #7d6938;
-  --button-bg: #5a4c2b;
-  --button-hover: #7d6938;
-  --button-secondary-bg: #3b4d3b;
-  --button-text: #f5e6c8;
-  --positive-color: #7da86b;
-  --negative-color: #c47a5a;
-  --notes-bg: #242e1e;
-  --notes-border: #7d6938;
-  --shadow: rgba(160, 120, 40, 0.25);
-}
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 /* ============================================
-   GLOBAL STYLES (uses the variables above)
+   GLOBAL OVERRIDES – use theme variables for
+   font, border-radius, and box-shadow.
+   These will respect the modern defaults
+   unless a theme explicitly changes them.
 ============================================ */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 1rem;
+  font-family: var(--font, 'Segoe UI', sans-serif);
 }
 
 .container {
-  background: var(--container-bg);
-  padding: 2rem 2.5rem;
-  border-radius: 2rem;
-  box-shadow: 0 0 30px var(--shadow);
-  max-width: 500px;
-  width: 100%;
-  text-align: left;
-}
-
-/* Theme picker row */
-.theme-picker {
-  text-align: right;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.theme-picker select {
-  background: var(--container-bg);
-  color: var(--text);
-  border: 1px solid var(--accent-dim);
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.wolf-emoji {
-  font-size: 3rem;
-}
-
-h1 {
-  font-size: 2rem;
-  margin: 0.3rem 0;
-  color: var(--text);
-}
-
-#introText {
-  font-size: 1.2rem;
-  margin: 1.5rem 0 0.5rem;
-  color: var(--text-secondary);
-}
-
-#moodName {
-  font-size: 2.8rem;
-  margin: 0.2rem 0 1rem;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.effects {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem;
-}
-
-.effects li {
-  margin: 0.4rem 0;
-  font-size: 1.1rem;
-  padding-left: 1.2rem;
-  text-indent: -1.2rem;
-}
-
-.effects li.positive::before {
-  content: "+ ";
-  color: var(--positive-color);
-  font-weight: bold;
-}
-
-.effects li.negative::before {
-  content: "− ";
-  color: var(--negative-color);
-  font-weight: bold;
-}
-
-/* Button area */
-.btn-group {
-  text-align: center;
-  margin: 1.5rem 0 1rem;
+  border-radius: var(--container-border-radius, 2rem);
+  box-shadow: var(--container-shadow, 0 0 30px var(--shadow));
 }
 
 button {
-  background: var(--button-bg);
-  border: none;
-  color: var(--button-text);
-  font-size: 1rem;
-  padding: 0.7rem 1.8rem;
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin: 0.3rem;
+  border-radius: var(--button-border-radius, 2rem);
 }
 
-button:hover {
-  background: var(--button-hover);
+/* ============================================
+   NEW THEMES – each defines every custom prop
+   plus the new visual variables: --font,
+   --container-border-radius,
+   --container-shadow,
+   --button-border-radius.
+============================================ */
+
+/* 1. Ancient Parchment */
+.theme-ancient-parchment {
+  --font: 'IM Fell English', 'Georgia', serif;
+  --bg: #2b2218;
+  --container-bg: #3f3325;
+  --text: #d4c4a3;
+  --text-secondary: #b3a07f;
+  --accent: #c99e2c;
+  --accent-dim: #6b5a3a;
+  --accent-hover: #946f2a;
+  --button-bg: #6b5a3a;
+  --button-hover: #946f2a;
+  --button-secondary-bg: #4a3f2f;
+  --button-text: #f5e6c8;
+  --positive-color: #7da86b;
+  --negative-color: #c47a5a;
+  --notes-bg: #2e2519;
+  --notes-border: #946f2a;
+  --shadow: rgba(80, 60, 20, 0.3);
+  --container-border-radius: 0.5rem;
+  --container-shadow: 0 4px 15px var(--shadow);
+  --button-border-radius: 0.25rem;
 }
 
-button.secondary {
-  background: var(--button-secondary-bg);
+/* 2. Moonlit Howl */
+.theme-moonlit-howl {
+  --font: 'Cormorant Garamond', 'Times New Roman', serif;
+  --bg: #0d111a;
+  --container-bg: #1a2235;
+  --text: #c0d0e0;
+  --text-secondary: #8ba4be;
+  --accent: #a1b9d1;
+  --accent-dim: #4b637c;
+  --accent-hover: #6f8aa8;
+  --button-bg: #4b637c;
+  --button-hover: #6f8aa8;
+  --button-secondary-bg: #2d3b4e;
+  --button-text: #e6eff7;
+  --positive-color: #7fd4a5;
+  --negative-color: #d47f8b;
+  --notes-bg: #141c29;
+  --notes-border: #6f8aa8;
+  --shadow: rgba(100, 120, 160, 0.25);
+  --container-border-radius: 0.8rem;
+  --container-shadow: 0 0 20px rgba(120, 140, 200, 0.15);
+  --button-border-radius: 1rem;
 }
 
-/* Notes box */
-.notes {
-  margin-top: 2rem;
-  padding: 1rem 1.2rem;
-  background: var(--notes-bg);
-  border-left: 4px solid var(--notes-border);
-  border-radius: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.notes strong {
-  color: var(--text);
-}
-
-.notes p {
-  margin: 0.3rem 0;
+/* 3. Savage Wilds */
+.theme-savage-wilds {
+  --font: 'Caveat', 'Comic Sans MS', cursive;
+  --bg: #1c2818;
+  --container-bg: #2a3522;
+  --text: #c2b59b;
+  --text-secondary: #a6977a;
+  --accent: #c47a3f;
+  --accent-dim: #6b462b;
+  --accent-hover: #8e5c3a;
+  --button-bg: #6b462b;
+  --button-hover: #8e5c3a;
+  --button-secondary-bg: #3e4d35;
+  --button-text: #f1e2c3;
+  --positive-color: #8db56f;
+  --negative-color: #b56b6b;
+  --notes-bg: #1f2a1b;
+  --notes-border: #8e5c3a;
+  --shadow: rgba(90, 60, 20, 0.25);
+  --container-border-radius: 0.3rem;
+  --container-shadow: none;
+  --button-border-radius: 0.2rem;
 }
