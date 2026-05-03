@@ -1,1 +1,15 @@
-
+:root, .theme-forest {
+  --bg: #1e2c1a;
+  --container-bg: #2d3a24;
+  --text: #d4c5a9;
+  --accent: #b8942e;
+  --mood-color: #d4a017;
+  /* etc. */
+}
+.theme-twilight {
+  --bg: #1a1a2e;
+  --container-bg: #2a2a40;
+  --text: #c4c4e0;
+  --accent: #6c5b9e;
+  --mood-color: #a78bfa;
+}
