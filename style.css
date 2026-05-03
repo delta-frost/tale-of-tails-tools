@@ -82,8 +82,8 @@ button {
   --button-border-radius: 1rem;
 }
 
-/* 3. Savage Wilds */
-.theme-savage-wilds {
+/* 3. Feral Wilds */
+.theme-feral-wilds {
   --font: 'Caveat', 'Comic Sans MS', cursive;
   --bg: #1c2818;
   --container-bg: #2a3522;
