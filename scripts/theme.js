@@ -5,18 +5,18 @@
 
     const validThemes = ['theme-erroa', 'theme-gwanwyn', 'theme-tonnau'];
 
-    // Map theme class to icon path and alt text
+    // Map theme class to icon path and alt text (using relative paths)
     const packData = {
         'theme-erroa': {
-            src: '/assets/icons/erroa.webp',
+            src: '../assets/icons/erroa.webp',
             alt: 'Erroa Pack'
         },
         'theme-gwanwyn': {
-            src: '/assets/icons/gwanwyn.webp',
+            src: '../assets/icons/gwanwyn.webp',
             alt: 'Gwanwyn Pack'
         },
         'theme-tonnau': {
-            src: '/assets/icons/tonnau.webp',
+            src: '../assets/icons/tonnau.webp',
             alt: 'Tonnau Pack'
         }
     };
@@ -50,13 +50,12 @@
         applyTheme(saved);
     });
 
-    // Inside theme.js, after DOMContentLoaded
+    // Animated logo hover — using relative path
     const logoImg = document.querySelector('.wolf-logo img');
     if (logoImg) {
         const staticSrc = logoImg.src; // saved original
-        const animatedSrc = '/assets/icons/logo.webp';
+        const animatedSrc = '../assets/icons/logo.webp';
         logoImg.addEventListener('mouseenter', () => { logoImg.src = animatedSrc; });
         logoImg.addEventListener('mouseleave', () => { logoImg.src = staticSrc; });
     }
 })();
-
