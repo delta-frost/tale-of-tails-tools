@@ -27,10 +27,6 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
-FILE_NAME_0=1800;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Findex.html;0;4
-FILE_NAME_1=381;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Fmood.html;0;4
-FILE_NAME_2=2968;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Fscripts%2Fmood-generator.js;0;4
-FILE_NAME_3=9662;CSS;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Fcss%2Fstyle.css;0;4
-FILE_NAME_4=1388;HTML;0;EUTF-8;1;1;1;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Fpackname.html;0;4
-FILE_NAME_5=2592;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Fscripts%2Fpackname.js;0;4
+current_page=1
+FILE_NAME_0=0;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2F_includes%2Fbase.njk;0;4
+FILE_NAME_1=840;None;0;EUTF-8;1;1;0;%2Fhome%2Fsaturday%2FDesktop%2Ftale-of-tails-tools%2Findex.njk;0;4
