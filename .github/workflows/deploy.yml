@@ -4,17 +4,8 @@ on:
   push:
     branches: [main]
 
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-
 permissions:
-  contents: write   # ← add these 3 lines
-
-jobs:
-  build-and-deploy:
-    ...
+  contents: write
 
 jobs:
   build-and-deploy:
