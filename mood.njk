@@ -2,15 +2,17 @@
 layout: base.njk
 title: "Wolf Mood Generator"
 ---
-<div id="introText">Your wolf is feeling…</div>
-<h2 id="moodName">—</h2>
-<ul id="effectsList" class="effects"></ul>
+<div class="mood-output" aria-live="polite" aria-atomic="true">
+  <div id="introText">Your wolf is feeling…</div>
+  <h2 id="moodName" aria-label="No mood generated yet">—</h2>
+  <ul id="effectsList" class="effects"></ul>
+</div>
 
 <div class="btn-group">
-  <button onclick="generateMood()">
+  <button type="button" onclick="generateMood()">
     <img src="/assets/icons/wolfpaw.webp" alt="" class="btn-icon"> New Mood
   </button>
-  <button class="secondary" onclick="generateFeralMood()">
+  <button type="button" class="secondary" onclick="generateFeralMood()">
     <img src="/assets/icons/skull.webp" alt="" class="btn-icon"> Feral Mood
   </button>
 </div>
