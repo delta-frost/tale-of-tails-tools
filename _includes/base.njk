@@ -6,6 +6,7 @@
   <title>{{ title }} – Tale of Tails Tools</title>
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <link rel="icon" type="image/webp" href="{{ '/assets/icons/wolfpaw.webp' | url }}">
+
 </head>
 <body>
   <div class="container">
@@ -45,7 +46,8 @@
     </p>
   </footer>
   -->
-
+<!-- Give JavaScript the site base URL (works with any pathPrefix) -->
+  <script>window.siteBase = "{{ '/' | url }}";</script>
   <!-- Load the theme switcher on every page -->
   <script src="{{ '/scripts/theme.js' | url }}"></script>
 </body>
