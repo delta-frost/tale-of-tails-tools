@@ -1,6 +1,6 @@
 # 🐺 Tale of Tails Tools
 
-A fan‑made collection of roleplaying tools for the [Tale of Tails](https://discord.gg/kAu4btGGDJ) Discord server — a WolfQuest‑inspired RP. Generate moods, pack names, and more with just a click!
+A fan‑made collection of roleplaying tools for the [Tale of Tails](https://discord.gg/kAu4btGGDJ) Discord server — an emote‑only WolfQuest roleplay that takes place in‑game.
 
 **Coded by Saturday** · **Built with [Eleventy (11ty)](https://www.11ty.dev/)**  
 
