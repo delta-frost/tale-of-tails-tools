@@ -1,0 +1,583 @@
+/* ============================================
+ *  FONT IMPORTS
+ * ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* ============================================
+ *  DEFAULT ROOT (Erroa theme)
+ * ============================================ */
+:root,
+.theme-erroa {
+  --font: 'IM Fell English', 'Georgia', serif;
+  --bg: #2b2218;
+  --container-bg: #3f3325;       /* warm leather brown */
+  --text: #f5e6c8;               /* light parchment */
+  --text-secondary: #d4c4a3;     /* muted gold */
+  --accent: #c47a3f;             /* burnt orange */
+  --accent-dim: #6b5a3a;         /* dark wood */
+  --accent-hover: #e5944b;       /* brighter autumn orange */
+  --button-bg: #6b5a3a;
+  --button-hover: #8c6b3f;
+  --button-secondary-bg: #4a3f2f;
+  --button-text: #f5e6c8;
+  --positive-color: #7da86b;     /* soft green from logo */
+  --negative-color: #c47a5a;     /* earthy red */
+  --notes-bg: #2e2519;
+  --notes-border: #c47a3f;       /* orange accent line */
+  --shadow: rgba(80, 60, 20, 0.3);
+  --container-border-radius: 0.5rem;
+  --container-shadow: 0 4px 15px rgba(80, 60, 20, 0.3);
+  --button-border-radius: 0.25rem;
+  --badge-new-bg: #d9a5b4;
+}
+
+/* Gwanwyn */
+.theme-gwanwyn body {
+  font-size: 1.25rem;
+}
+
+.theme-gwanwyn {
+  --font: 'Cormorant Garamond', 'Times New Roman', serif;
+  --bg: #1e281c;
+  --container-bg: #2d362a;
+  --text: #d2dcc9;
+  --text-secondary: #a7b89b;
+  --accent: #7c9e6b;
+  --accent-dim: #4e6241;
+  --accent-hover: #90b07f;
+  --button-bg: #4e6241;
+  --button-hover: #6a804f;
+  --button-secondary-bg: #3a4634;
+  --button-text: #f0f6e8;
+  --positive-color: #8db56f;
+  --negative-color: #c47a5a;
+  --notes-bg: #232d20;
+  --notes-border: #7c9e6b;
+  --shadow: rgba(60, 90, 40, 0.25);
+  --container-border-radius: 0.6rem;
+  --container-shadow: 0 4px 15px rgba(40, 60, 20, 0.2);
+  --button-border-radius: 0.35rem;
+  --badge-new-bg: #e67e22;
+}
+
+/* Tonnau */
+.theme-tonnau {
+  --font: 'Nunito', 'Verdana', sans-serif;
+  --bg: #e6decf;                 /* warm pale sand */
+  --container-bg: #f5efe5;       /* soft driftwood, not pure white */
+  --text: #2e2a23;               /* deep brown, good contrast */
+  --text-secondary: #5c5344;
+  --accent: #7a9cbf;             /* muted sky blue */
+  --accent-dim: #b8c9d4;
+  --accent-hover: #92b3d0;
+  --button-bg: #c4b99a;
+  --button-hover: #d5cbb2;
+  --button-secondary-bg: #e0d6c0;
+  --button-text: #2e2a23;
+  --positive-color: #6b8c5c;
+  --negative-color: #b56b6b;
+  --notes-bg: #ede4d6;
+  --notes-border: #7a9cbf;
+  --shadow: rgba(0,0,0,0.06);
+  --container-border-radius: 1rem;
+  --container-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  --button-border-radius: 0.5rem;
+  --badge-new-bg: #b38b6b;       /* earthy badge */
+}
+
+/* ============================================
+ *  GLOBAL STYLES
+ * ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 1.15rem;
+  font-family: var(--font, 'Segoe UI', sans-serif);
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  background: var(--container-bg);
+  padding: 2rem 2.5rem;
+  border-radius: var(--container-border-radius, 2rem);
+  box-shadow: var(--container-shadow, 0 0 30px var(--shadow));
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.3s, box-shadow 0.3s, border-radius 0.3s;
+}
+
+/* ============================================
+ *  THEME PICKER
+ * ============================================ */
+.theme-picker {
+  text-align: right;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-picker label {
+  font-style: italic;
+}
+
+.theme-picker select {
+  background: var(--container-bg);
+  color: var(--text);
+  border: 1px solid var(--accent-dim);
+  border-radius: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-picker select:hover {
+  border-color: var(--accent-hover);
+}
+
+.theme-icon-small {
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+  border-radius: 0;  /* transparent images don't need a circular crop */
+  margin-right: 0.2rem;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* ============================================
+ *  HEADER & LOGO
+ * ============================================ */
+.header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.wolf-logo {
+  filter: drop-shadow(0 0 6px var(--shadow));
+}
+
+.wolf-logo a img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+.wolf-logo a img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px var(--accent-dim));
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0.2rem 0 0;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+#introText {
+font-size: 1.2rem;
+margin: 1.8rem 0 0.3rem;
+color: var(--text-secondary);
+}
+
+#moodName {
+font-size: 3rem;
+margin: 0.1rem 0 1.2rem;
+color: var(--accent);
+text-transform: uppercase;
+letter-spacing: 0.06em;
+text-shadow: 1px 1px 3px var(--shadow);
+}
+
+/* ============================================
+ *  EFFECTS (Mood list)
+ * ============================================ */
+.effects {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+}
+
+.effects li {
+  margin: 0.45rem 0;
+  font-size: 1.1rem;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  line-height: 1.5;
+}
+
+.effects li.positive::before {
+  content: "+ ";
+  color: var(--positive-color);
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+.effects li.negative::before {
+  content: "− ";
+  color: var(--negative-color);
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+/* ============================================
+ *  BUTTONS
+ * ============================================ */
+.btn-group {
+  text-align: center;
+  margin: 1.8rem 0 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+button {
+  background: var(--button-bg);
+  border: none;
+  color: var(--button-text);
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.7rem 1.8rem;
+  border-radius: var(--button-border-radius, 2rem);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.secondary {
+  background: var(--button-secondary-bg);
+  box-shadow: none;
+}
+
+button.secondary:hover {
+  background: var(--button-hover);
+  opacity: 0.9;
+}
+
+button:disabled,
+button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Anchor styled as button (used for tool-card navigation links) */
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--button-bg);
+  border: none;
+  color: var(--button-text);
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--button-border-radius, 2rem);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-link:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-link:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+ *  KEYBOARD FOCUS STYLES
+ * ============================================ */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+button:focus-visible,
+.btn-link:focus-visible,
+.discord-button:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+select:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-color: var(--accent-hover, #e5944b);
+}
+
+.wolf-logo a:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+ *  NOTES
+ * ============================================ */
+.notes {
+  margin-top: 2rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--notes-bg);
+  border-left: 4px solid var(--notes-border);
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.notes strong {
+  color: var(--text);
+}
+
+.notes p {
+  margin: 0.4rem 0;
+}
+
+/* ============================================
+ *  HOME PAGE TOOLS GRID & NEW BADGE
+ * ============================================ */
+.tagline {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.tool-card {
+  background: rgba(0,0,0,0.1);
+  padding: 1.2rem 1.5rem 1.4rem;
+  border-radius: 0.8rem;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.tool-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.tool-card p {
+  margin: 0 0 1.1rem;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.tool-card .btn-link,
+.tool-card button {
+  align-self: center;
+  margin-top: auto;
+}
+
+.tool-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); /* subtle depth */
+}
+
+.badge-new {
+  display: inline-block;
+  background-color: var(--badge-new-bg, #e67e22);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-link .badge-new {
+  margin-left: 0;
+  line-height: 1;
+  padding: 0.22rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.badge-soon {
+  display: inline-block;
+  background-color: #7a7a7a;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+/* Responsive: on larger screens, grid side by side */
+@media (min-width: 600px) {
+  .tools-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .tool-card {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* wolf logo */
+.wolf-logo img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+.wolf-logo img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px var(--accent-dim));
+}
+
+.btn-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  object-fit: contain;
+  filter: brightness(1.1); 
+}
+
+/* ============================================
+ *  DISCORD BUTTON
+ * ============================================ */
+.discord-cta {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.discord-button {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: var(--font);
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  line-height: 1.4;
+  border: 2px solid rgba(255,255,255,0.15);
+
+  /* Glossy shine gradient layered over the accent colour */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.35) 0%,
+      rgba(255,255,255,0.05) 40%,
+      rgba(0,0,0,0.1) 100%
+    ),
+    var(--accent);
+
+  color: var(--button-text);
+  box-shadow:
+    /* Outer soft shadow */
+    0 4px 15px var(--shadow),
+    /* Inner top highlight for glassy feel */
+    inset 0 1px 3px rgba(255,255,255,0.4),
+    /* Inner bottom shadow for depth */
+    inset 0 -2px 4px rgba(0,0,0,0.2);
+
+  transition: 
+    background 0.3s, 
+    transform 0.2s, 
+    box-shadow 0.3s, 
+    border-color 0.3s;
+}
+
+.discord-button:hover {
+  /* Swap to accent-hover but keep the same glossy overlay */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.35) 0%,
+      rgba(255,255,255,0.1) 50%,
+      rgba(0,0,0,0.15) 100%
+    ),
+    var(--accent-hover);
+
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px var(--shadow),
+    inset 0 1px 3px rgba(255,255,255,0.45),
+    inset 0 -2px 5px rgba(0,0,0,0.25);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.discord-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}

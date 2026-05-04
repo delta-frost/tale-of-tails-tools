@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolf Mood Generator – Tale of Tails Tools</title>
+  <link rel="stylesheet" href="/tale-of-tails-tools/css/style.css">
+  <link rel="icon" type="image/webp" href="/tale-of-tails-tools/assets/icons/wolfpaw.webp">
+</head>
+<body>
+  <div class="container">
+    <!-- Theme picker (same across all pages) -->
+    <div class="theme-picker">
+      <img id="currentPackIcon" src="/tale-of-tails-tools/assets/icons/erroa.webp" alt="Erroa Pack" class="theme-icon-small">
+      <label for="themeSelect">Pack Theme:</label>
+      <select id="themeSelect" name="themeSelect">
+        <option value="theme-erroa">Erroa</option>
+        <option value="theme-gwanwyn">Gwanwyn</option>
+        <option value="theme-tonnau">Tonnau</option>
+      </select>
+    </div>
+
+    <!-- Header with logo + dynamic title -->
+    <div class="header">
+      <div class="wolf-logo">
+<<<<<<< HEAD
+        <a href="/tale-of-tails-tools/"><img src="/tale-of-tails-tools/assets/icons/static-logo.png" style="width:30%;" alt="Logo"></a>
+=======
+        <a href="/" aria-label="Tale of Tails Tools home"><img src="/assets/icons/static-logo.png" style="width:30%;" alt=""></a>
+>>>>>>> 0b886b889a9441fe5f3e04570f441264aecb3230
+      </div>
+      <h1>Wolf Mood Generator</h1>
+    </div>
+
+    <!-- Unique page content injected below -->
+    <div class="mood-output" aria-live="polite" aria-atomic="true">
+  <div id="introText">Your wolf is feeling…</div>
+  <h2 id="moodName" aria-label="No mood generated yet">—</h2>
+  <ul id="effectsList" class="effects"></ul>
+</div>
+
+<div class="btn-group">
+  <button type="button" onclick="generateMood()">
+    <img src="/assets/icons/wolfpaw.webp" alt="" class="btn-icon"> New Mood
+  </button>
+  <button type="button" class="secondary" onclick="generateFeralMood()">
+    <img src="/assets/icons/skull.webp" alt="" class="btn-icon"> Feral Mood
+  </button>
+</div>
+
+<div class="notes">
+  <strong>Notes</strong>
+  <p>
+    - You are encouraged to take your wolf’s personality into account — e.g. a cowardly wolf in a “Daring” mood may have a much lower bar for what counts as daring.
+  </p>
+  <p>
+    - 'Feral Moods' are more intense, drastic states — they reflect heightened instinct, not supernatural forces. A wolf in a Frenzied or Haunted mood is simply acting on deep emotion.
+  </p>
+</div>
+
+<script src="/tale-of-tails-tools/scripts/mood-generator.js"></script>
+
+  </div>
+
+  <!--
+  ===== FOOTER PLACEHOLDER =====
+  Uncomment and fill with your links when ready.
+  You can also move this inside the .container div if you prefer.
+  <footer>
+    <p style="font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+      <a href="/about">About</a> •
+      <a href="/credits">Credits</a> •
+      <a href="https://discord.gg/kAu4btGGDJ">Discord</a> •
+      Contact Saturday: <a href="mailto:you@example.com">email</a>
+    </p>
+  </footer>
+  -->
+
+  <!-- Load the theme switcher on every page -->
+  <script src="/tale-of-tails-tools/scripts/theme.js"></script>
+</body>
+</html>
