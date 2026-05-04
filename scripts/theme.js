@@ -8,15 +8,15 @@
     // Map theme class to icon path and alt text (using relative paths)
     const packData = {
         'theme-erroa': {
-            src: '../assets/icons/erroa.webp',
+            src: './assets/icons/erroa.webp',
             alt: 'Erroa Pack'
         },
         'theme-gwanwyn': {
-            src: '../assets/icons/gwanwyn.webp',
+            src: './assets/icons/gwanwyn.webp',
             alt: 'Gwanwyn Pack'
         },
         'theme-tonnau': {
-            src: '../assets/icons/tonnau.webp',
+            src: './assets/icons/tonnau.webp',
             alt: 'Tonnau Pack'
         }
     };
