@@ -11,9 +11,9 @@
   <div class="container">
     <!-- Theme picker (same across all pages) -->
     <div class="theme-picker">
-      <img id="currentPackIcon" src="/assets/icons/erroa.webp" alt="Erroa Pack" class="theme-icon-small">
+      <img id="currentPackIcon" src="/assets/icons/erroa.webp" alt="" class="theme-icon-small">
       <label for="themeSelect">Pack Theme:</label>
-      <select id="themeSelect">
+      <select id="themeSelect" name="themeSelect">
         <option value="theme-erroa">Erroa</option>
         <option value="theme-gwanwyn">Gwanwyn</option>
         <option value="theme-tonnau">Tonnau</option>
@@ -23,7 +23,7 @@
     <!-- Header with logo + dynamic title -->
     <div class="header">
       <div class="wolf-logo">
-        <a href="/"><img src="/assets/icons/static-logo.png" style="width:30%;" alt="Logo"></a>
+        <a href="/" aria-label="Tale of Tails Tools home"><img src="/assets/icons/static-logo.png" style="width:30%;" alt=""></a>
       </div>
       <h1>{{ title }}</h1>
     </div>

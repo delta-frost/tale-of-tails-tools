@@ -284,6 +284,87 @@ button.secondary:hover {
   opacity: 0.9;
 }
 
+button:disabled,
+button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Anchor styled as button (used for tool-card navigation links) */
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--button-bg);
+  border: none;
+  color: var(--button-text);
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--button-border-radius, 2rem);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-link:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-link:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+ *  KEYBOARD FOCUS STYLES
+ * ============================================ */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+button:focus-visible,
+.btn-link:focus-visible,
+.discord-button:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+select:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 2px;
+  border-color: var(--accent-hover, #e5944b);
+}
+
+.wolf-logo a:focus-visible {
+  outline: 3px solid var(--accent-hover, #e5944b);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ============================================
  *  NOTES
  * ============================================ */
@@ -326,23 +407,29 @@ button.secondary:hover {
 
 .tool-card {
   background: rgba(0,0,0,0.1);
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem 1.4rem;
   border-radius: 0.8rem;
   transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .tool-card h2 {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.4rem;
   font-size: 1.4rem;
 }
 
 .tool-card p {
-  margin: 0 0 0.8rem;
+  margin: 0 0 1.1rem;
   color: var(--text-secondary);
+  flex-grow: 1;
 }
 
+.tool-card .btn-link,
 .tool-card button {
-  position: relative;
+  align-self: center;
+  margin-top: auto;
 }
 
 .tool-icon {
@@ -367,6 +454,13 @@ button.secondary:hover {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-link .badge-new {
+  margin-left: 0;
+  line-height: 1;
+  padding: 0.22rem 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
 }
 
 .badge-soon {
