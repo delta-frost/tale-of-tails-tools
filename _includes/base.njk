@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} – Tale of Tails Tools</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/webp" href="/assets/icons/wolfpaw.webp">
+</head>
+<body>
+  <div class="container">
+    <!-- Theme picker (same across all pages) -->
+    <div class="theme-picker">
+      <img id="currentPackIcon" src="/assets/icons/erroa.webp" alt="Erroa Pack" class="theme-icon-small">
+      <label for="themeSelect">Pack Theme:</label>
+      <select id="themeSelect">
+        <option value="theme-erroa">Erroa</option>
+        <option value="theme-gwanwyn">Gwanwyn</option>
+        <option value="theme-tonnau">Tonnau</option>
+      </select>
+    </div>
+
+    <!-- Header with logo + dynamic title -->
+    <div class="header">
+      <div class="wolf-logo">
+        <a href="/"><img src="/assets/icons/static-logo.png" style="width:30%;" alt="Logo"></a>
+      </div>
+      <h1>{{ title }}</h1>
+    </div>
+
+    <!-- Unique page content injected below -->
+    {{ content | safe }}
+  </div>
+
+  <!--
+  ===== FOOTER PLACEHOLDER =====
+  Uncomment and fill with your links when ready.
+  You can also move this inside the .container div if you prefer.
+  <footer>
+    <p style="font-size: 0.8rem; text-align: center; margin-top: 2rem;">
+      <a href="/about">About</a> •
+      <a href="/credits">Credits</a> •
+      <a href="https://discord.gg/kAu4btGGDJ">Discord</a> •
+      Contact Saturday: <a href="mailto:you@example.com">email</a>
+    </p>
+  </footer>
+  -->
+
+  <!-- Load the theme switcher on every page -->
+  <script src="/scripts/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "tale-of-tails-tools",
+  "version": "1.0.0",
+  "description": "A simple assortment of tools for roleplaying in the Tale of Tails discord server; a Wolfquest RP. Coded by Saturday. Assets belong to ToT staff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delta-frost/wolf-mood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/delta-frost/wolf-mood/issues"
+  },
+  "homepage": "https://github.com/delta-frost/wolf-mood#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

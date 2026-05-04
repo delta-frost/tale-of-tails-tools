@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: "Wolf Mood Generator"
+---
+<div id="introText">Your wolf is feeling…</div>
+<h2 id="moodName">—</h2>
+<ul id="effectsList" class="effects"></ul>
+
+<div class="btn-group">
+  <button onclick="generateMood()">
+    <img src="/assets/icons/wolfpaw.webp" alt="" class="btn-icon"> New Mood
+  </button>
+  <button class="secondary" onclick="generateFeralMood()">
+    <img src="/assets/icons/skull.webp" alt="" class="btn-icon"> Feral Mood
+  </button>
+</div>
+
+<div class="notes">
+  <strong>Notes</strong>
+  <p>
+    - You are encouraged to take your wolf’s personality into account — e.g. a cowardly wolf in a “Daring” mood may have a much lower bar for what counts as daring.
+  </p>
+  <p>
+    - 'Feral Moods' are more intense, drastic states — they reflect heightened instinct, not supernatural forces. A wolf in a Frenzied or Haunted mood is simply acting on deep emotion.
+  </p>
+</div>
+
+<script src="/scripts/mood-generator.js"></script>
