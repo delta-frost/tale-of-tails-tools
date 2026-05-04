@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} – Tale of Tails Tools</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" type="image/webp" href="/assets/icons/wolfpaw.webp">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+  <link rel="icon" type="image/webp" href="{{ '/assets/icons/wolfpaw.webp' | url }}">
 </head>
 <body>
   <div class="container">
     <!-- Theme picker (same across all pages) -->
     <div class="theme-picker">
-      <img id="currentPackIcon" src="/assets/icons/erroa.webp" alt="Erroa Pack" class="theme-icon-small">
+      <img id="currentPackIcon" src="{{ '/assets/icons/erroa.webp' | url }}" alt="Erroa Pack" class="theme-icon-small">
       <label for="themeSelect">Pack Theme:</label>
       <select id="themeSelect">
         <option value="theme-erroa">Erroa</option>
@@ -23,7 +23,7 @@
     <!-- Header with logo + dynamic title -->
     <div class="header">
       <div class="wolf-logo">
-        <a href="/"><img src="/assets/icons/static-logo.png" style="width:30%;" alt="Logo"></a>
+        <a href="{{ '/' | url }}"><img src="{{ '/assets/icons/static-logo.png' | url }}" style="width:30%;" alt="Logo"></a>
       </div>
       <h1>{{ title }}</h1>
     </div>
@@ -47,6 +47,6 @@
   -->
 
   <!-- Load the theme switcher on every page -->
-  <script src="/scripts/theme.js"></script>
+  <script src="{{ '/scripts/theme.js' | url }}"></script>
 </body>
 </html>
