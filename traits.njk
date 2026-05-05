@@ -23,6 +23,25 @@ title: "Wolf Trait Generator"
   <button id="generateTraitsBtn">
     <img src="{{ '/assets/icons/wolfpaw.webp' | url }}" alt="" class="btn-icon"> Generate Traits
   </button>
+  
+  <button
+    x-data="{ copied: false }"
+    @click="
+      const text = 
+        '+ ' + document.getElementById('positiveTrait').textContent +
+        ' | = ' + document.getElementById('neutralTrait').textContent +
+        ' | - ' + document.getElementById('negativeTrait').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        copied = true;
+        setTimeout(() => copied = false, 1500);
+      });
+    "
+    class="secondary"
+    aria-label="Copy traits to clipboard"
+  >
+    <img src="{{ '/assets/icons/pencil.webp' | url }}" alt="" class="btn-icon">
+    <span x-text="copied ? '✓ Copied!' : 'Copy Traits'"></span>
+  </button>
 </div>
 
 <div class="notes">
