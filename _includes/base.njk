@@ -26,7 +26,8 @@
          icons: {
              'theme-erroa': '{{ '/assets/icons/erroa.webp' | url }}',
              'theme-gwanwyn': '{{ '/assets/icons/gwanwyn.webp' | url }}',
-             'theme-tonnau': '{{ '/assets/icons/tonnau.webp' | url }}'
+             'theme-tonnau': '{{ '/assets/icons/tonnau.webp' | url }}',
+             'theme-dispersal': '{{ '/assets/icons/greypaw.webp' | url }}'
          },
          init() {
              document.documentElement.className = this.theme;
@@ -50,6 +51,9 @@
         <option value="theme-tonnau">
             <img src="{{ '/assets/icons/tonnau.webp' | url }}" alt="" class="theme-icon-small"> Tonnau
         </option>
+        <option value="theme-dispersal">
+    <img src="{{ '/assets/icons/greypaw.webp' | url }}" alt="" class="theme-icon-small"> Dispersal
+</option>
     </select>
 
     <!-- Optional pack icon – only if you have <img id="currentPackIcon"> somewhere -->
