@@ -6,20 +6,58 @@
   <title>Pack Name Generator – Tale of Tails Tools</title>
   <link rel="stylesheet" href="/tale-of-tails-tools/css/style.css">
   <link rel="icon" type="image/webp" href="/tale-of-tails-tools/assets/icons/wolfpaw.webp">
-
+<script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.className = saved;
+    } else {
+      document.documentElement.className = 'theme-erroa';
+    }
+  })();
+</script>
 </head>
 <body>
   <div class="container">
     <!-- Theme picker (same across all pages) -->
-    <div class="theme-picker">
-      <img id="currentPackIcon" src="/tale-of-tails-tools/assets/icons/erroa.webp" alt="Erroa Pack" class="theme-icon-small">
-      <label for="themeSelect">Pack Theme:</label>
-      <select id="themeSelect" name="themeSelect">
-        <option value="theme-erroa">Erroa</option>
-        <option value="theme-gwanwyn">Gwanwyn</option>
-        <option value="theme-tonnau">Tonnau</option>
-      </select>
-    </div>
+<div class="theme-picker"
+     x-data="{
+         theme: localStorage.getItem('theme') || 'theme-erroa',
+         icons: {
+             'theme-erroa': '/tale-of-tails-tools/assets/icons/erroa.webp',
+             'theme-gwanwyn': '/tale-of-tails-tools/assets/icons/gwanwyn.webp',
+             'theme-tonnau': '/tale-of-tails-tools/assets/icons/tonnau.webp'
+         },
+         init() {
+             document.documentElement.className = this.theme;
+         },
+         switchTheme(newTheme) {
+             this.theme = newTheme;
+             document.documentElement.className = newTheme;
+             localStorage.setItem('theme', newTheme);
+         }
+     }">
+    <label for="themeSelect">Theme:</label>
+    <select id="themeSelect"
+            x-model="theme"
+            @change="switchTheme($el.value)">
+        <option value="theme-erroa">
+            <img src="/tale-of-tails-tools/assets/icons/erroa.webp" alt="" class="theme-icon-small"> Erroa
+        </option>
+        <option value="theme-gwanwyn">
+            <img src="/tale-of-tails-tools/assets/icons/gwanwyn.webp" alt="" class="theme-icon-small"> Gwanwyn
+        </option>
+        <option value="theme-tonnau">
+            <img src="/tale-of-tails-tools/assets/icons/tonnau.webp" alt="" class="theme-icon-small"> Tonnau
+        </option>
+    </select>
+
+    <!-- Optional pack icon – only if you have <img id="currentPackIcon"> somewhere -->
+    <img id="currentPackIcon"
+         :src="icons[theme]"
+         alt="Pack icon"
+         style="width: 1.6rem; height: 1.6rem; vertical-align: middle; margin-left: 0.5rem;" />
+</div>
 
     <!-- Header with logo + dynamic title -->
     <div class="header">
@@ -90,9 +128,19 @@
     </p>
   </footer>
   -->
-<!-- Give JavaScript the site base URL (works with any pathPrefix) -->
-  <script>window.siteBase = "/tale-of-tails-tools/";</script>
-  <!-- Load the theme switcher on every page -->
-  <script src="/tale-of-tails-tools/scripts/theme.js"></script>
+	<!-- Give JavaScript the site base URL (works with any pathPrefix) -->
+	<script>window.siteBase = "/tale-of-tails-tools/";</script>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<!-- Animated Logo script -->
+	<script>
+  (function() {
+    const logoImg = document.querySelector('.wolf-logo img');
+    if (!logoImg) return;
+    const staticSrc = logoImg.src;
+    const animatedSrc = '/tale-of-tails-tools/assets/icons/logo.webp';  // adjust if different
+    logoImg.addEventListener('mouseenter', () => { logoImg.src = animatedSrc; });
+    logoImg.addEventListener('mouseleave', () => { logoImg.src = staticSrc; });
+  })();
+</script>
 </body>
 </html>
