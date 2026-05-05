@@ -14,8 +14,6 @@ Hey there! This is a little collection of roleplay tools for the [Tale of Tails]
 - **Pack Theme Picker** – Swap the whole site’s look between Erroa, Gwanwyn, and Tonnau with a single click.  
 - **More tools on the way** – Ideas from the server are always welcome!
 
----
-
 ## 🛠️ Under the hood
 
 - **Static site builder:** Eleventy  
@@ -23,8 +21,6 @@ Hey there! This is a little collection of roleplay tools for the [Tale of Tails]
 - **Styling:** Custom CSS with theme variables (themes change colours, fonts, and shadows)  
 - **Magic bits:** Vanilla JavaScript
 - **Hosting:** Happy to live on Netlify, Vercel, or GitHub Pages  
-
----
 
 ## 🚀 Wanna tinker locally?
 
@@ -49,8 +45,6 @@ Spin it up on your own machine in under a minute:
 ## 🤝 Wanna contribute?
 
 Found a bug? Got an idea for a new tool? Open an issue or hit up Saturday in the pack server. Pull requests are super welcome — just keep the vibe friendly and wolfy.
-
----
 
 ## 📜 License
 
