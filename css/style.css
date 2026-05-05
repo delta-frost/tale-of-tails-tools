@@ -88,6 +88,31 @@
   --badge-new-bg: #b38b6b;       /* earthy badge */
 }
 
+/* Dispersal */
+.theme-dispersal {
+  --font: 'Cormorant Garamond', 'Times New Roman', serif;
+  --bg: #1c1e21;                 /* dark charcoal */
+  --container-bg: #2a2d31;       /* cool dark grey */
+  --text: #d5d5d5;              /* soft silver */
+  --text-secondary: #9a9ea5;    /* muted grey‑blue */
+  --accent: #8b9bb4;            /* misty blue‑grey */
+  --accent-dim: #5a6573;        /* deep slate */
+  --accent-hover: #a7b9ce;      /* lighter mist */
+  --button-bg: #5a6573;
+  --button-hover: #6e7b8c;
+  --button-secondary-bg: #3b4046;
+  --button-text: #eef0f3;
+  --positive-color: #7a9c84;    /* muted sage */
+  --negative-color: #b0766a;    /* dusty rose */
+  --notes-bg: #23262b;
+  --notes-border: #8b9bb4;
+  --shadow: rgba(0,0,0,0.3);
+  --container-border-radius: 0.6rem;
+  --container-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  --button-border-radius: 0.35rem;
+  --badge-new-bg: #7e8c9e;
+}
+
 /* ============================================
  *  GLOBAL STYLES
  * ============================================ */
