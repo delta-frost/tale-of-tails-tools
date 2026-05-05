@@ -10,9 +10,9 @@ Hey there! This is a little collection of roleplay tools for the [Tale of Tails]
 
 - **Mood Generator** – Roll a normal or feral mood for your wolf, complete with effects and a fitting vibe.  
 - **Wolf Trait Generator** – Get a random positive, neutral, and negative personality trait. Click any card to re‑roll just that one (it even shimmers!).  
-- **Pack Name Generator** – Create unique pack names with lovely Welsh‑inspired flavours.  
+- **Pack Name Generator** – Create unique pack names based in Welsh.  
 - **Pack Theme Picker** – Swap the whole site’s look between Erroa, Gwanwyn, and Tonnau with a single click.  
-- **More tools on the way** – Ideas from the pack are always welcome!
+- **More tools on the way** – Ideas from the server are always welcome!
 
 ---
 
