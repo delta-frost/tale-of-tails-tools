@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: "Wolf Trait Generator"
+---
+
+<div id="traitsOutput" class="traits-grid" aria-live="polite">
+  <div class="trait-card positive" data-category="positive" title="Click to re‑roll">
+    <span class="trait-label">Positive</span>
+    <span class="trait-value" id="positiveTrait">—</span>
+  </div>
+  <div class="trait-card neutral" data-category="neutral" title="Click to re‑roll">
+    <span class="trait-label">Neutral</span>
+    <span class="trait-value" id="neutralTrait">—</span>
+  </div>
+  <div class="trait-card negative" data-category="negative" title="Click to re‑roll">
+    <span class="trait-label">Negative</span>
+    <span class="trait-value" id="negativeTrait">—</span>
+  </div>
+</div>
+
+
+<div class="btn-group">
+  <button id="generateTraitsBtn">
+    <img src="{{ '/assets/icons/wolfpaw.webp' | url }}" alt="" class="btn-icon"> Generate Traits
+  </button>
+</div>
+
+<div class="notes">
+  <strong>Notes</strong>
+	<p>- You can click on any trait to re-generate it separately from the rest.</p>
+	<p>- 'Human'-ish traits have been manually filtered out, if you spot one that doesn't make sense, let us know!</p>
+</div>
+
+<script src="{{ '/scripts/traits.js' | url }}"></script>
