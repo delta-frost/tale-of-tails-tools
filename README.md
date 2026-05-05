@@ -16,11 +16,11 @@ Hey there! This is a little collection of roleplay tools for the [Tale of Tails]
 
 ## 🛠️ Under the hood
 
-- **Static site builder:** Eleventy  
-- **Templates:** Nunjucks (`.njk`)  
-- **Styling:** Custom CSS with theme variables (themes change colours, fonts, and shadows)  
-- **Magic bits:** Vanilla JavaScript
-- **Hosting:** Happy to live on Netlify, Vercel, or GitHub Pages  
+- **Static site builder:** Eleventy
+- **Templates:** Nunjucks (`.njk`)
+- **Styling:** Custom CSS with theme variables (themes change colours, fonts, and shadows)
+- **Interactivity:** Vanilla JavaScript for the generators, with a dash of Alpine.js for reactive UI sprinkles
+- **Hosting:** Happy to live on Netlify, Vercel, or GitHub Pages
 
 ## 🚀 Wanna tinker locally?
 

@@ -40,6 +40,27 @@
   <button id="generateBtn">
     <img src="/tale-of-tails-tools/assets/icons/packlead.webp" alt="" class="btn-icon"> Generate Name
   </button>
+
+  <button
+    x-data="{ copied: false }"
+    @click="
+      const packName = document.getElementById('packNameDisplay')?.textContent || '';
+      const titleEl = document.querySelector('#generatorOutput p:nth-of-type(1)');
+      const meaningEl = document.querySelector('#generatorOutput p:nth-of-type(2)');
+      const title = titleEl?.textContent || '';
+      const meaning = meaningEl?.textContent || '';
+      const text = `Pack: ${packName} · ${title} · ${meaning}`;
+      navigator.clipboard.writeText(text).then(() => {
+        copied = true;
+        setTimeout(() => copied = false, 1500);
+      });
+    "
+    class="secondary"
+    aria-label="Copy pack name to clipboard"
+  >
+    <img src="/tale-of-tails-tools/assets/icons/pencil.webp" alt="" class="btn-icon">
+    <span x-text="copied ? '✓ Copied!' : 'Copy Name'"></span>
+  </button>
 </div>
 
 <div class="notes">
