@@ -120,6 +120,13 @@ body {
   transition: background 0.3s, box-shadow 0.3s, border-radius 0.3s;
 }
 
+/* Give it more room on larger screens */
+@media (min-width: 800px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
 /* ============================================
  *  THEME PICKER
  * ============================================ */
@@ -510,6 +517,13 @@ select:focus-visible {
   filter: brightness(1.1); 
 }
 
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+.btn-group button:active .btn-icon {
+  transform: rotate(20deg);
+}
+
 /* ============================================
  *  DISCORD BUTTON
  * ============================================ */
@@ -580,4 +594,143 @@ select:focus-visible {
   vertical-align: middle;
   margin-right: 0.5rem;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+/* ============================================
+ *  TRAIT GENERATOR GRID & CARDS
+ * ============================================ */
+
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Single column on narrow screens */
+@media (max-width: 500px) {
+  .traits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual card */
+.trait-card {
+  padding: 1.5rem 1.5rem;
+  border-radius: 0.8rem;
+  background: rgba(0,0,0,0.15);
+  border-left: 4px solid var(--accent-dim);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 7rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Category colour accents */
+.trait-card.positive { border-left-color: var(--positive-color); }
+.trait-card.neutral  { border-left-color: var(--accent-dim); }
+.trait-card.negative { border-left-color: var(--negative-color); }
+
+/* Hover glow */
+.trait-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px var(--accent-dim);
+}
+
+/* Label & value */
+.trait-label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.trait-value {
+  display: block;
+  font-size: 1.6rem;          /* base size, JS will override if needed */
+  font-weight: bold;
+  color: var(--text);
+  line-height: 1.3;
+  transition: opacity 0.25s ease, font-size 0.25s ease;  /* smooth resize */
+}
+
+/* Fade out when re‑rolling */
+.trait-card.updating .trait-value {
+  opacity: 0;
+}
+
+/* ── Optional shimmer on hover ── */
+/* Choose ONE of the two versions below and delete the other. */
+
+/* Version A – one‑time sweep */
+.trait-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.08) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.trait-card:hover::before {
+  left: 150%;
+}
+
+/* Version B – looping shimmer (remove this if using Version A) */
+/*
+.trait-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  animation: none;
+}
+
+.trait-card:hover::before {
+  opacity: 1;
+  animation: shimmerSweep 2s infinite;
+}
+
+@keyframes shimmerSweep {
+  0%   { left: -150%; }
+  100% { left: 150%; }
+}
+*/
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .trait-card::before {
+    animation: none !important;
+    transition: none !important;
+    opacity: 0 !important;
+  }
 }

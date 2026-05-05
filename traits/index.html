@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tale of Tails Tools – Tale of Tails Tools</title>
+  <title>Wolf Trait Generator – Tale of Tails Tools</title>
   <link rel="stylesheet" href="/tale-of-tails-tools/css/style.css">
   <link rel="icon" type="image/webp" href="/tale-of-tails-tools/assets/icons/wolfpaw.webp">
 
@@ -26,41 +26,40 @@
       <div class="wolf-logo">
         <a href="/tale-of-tails-tools/"><img src="/tale-of-tails-tools/assets/icons/static-logo.png" style="width:30%;" alt="Logo"></a>
       </div>
-      <h1>Tale of Tails Tools</h1>
+      <h1>Wolf Trait Generator</h1>
     </div>
 
     <!-- Unique page content injected below -->
-    <p class="tagline">A fan-run, fan-created assortment of tools &amp; guides for roleplaying in Tale of Tails. All assets belong to ToT staff. Need help or need to report a bug? Contact Saturday.</p>
-
-<div class="tools-grid">
-  <div class="tool-card">
-    <h2><img src="/tale-of-tails-tools/assets/icons/mapleseed.webp" alt="" class="tool-icon"> Mood Generator</h2>
-    <p>Generate random wolf moods with positive &amp; negative traits.</p>
-    <button onclick="location.href='mood';">Open Tool</button>
+    
+<div id="traitsOutput" class="traits-grid" aria-live="polite">
+  <div class="trait-card positive" data-category="positive" title="Click to re‑roll">
+    <span class="trait-label">Positive</span>
+    <span class="trait-value" id="positiveTrait">—</span>
   </div>
-  <div class="tool-card">
-    <h2><img src="/tale-of-tails-tools/assets/icons/packlead.webp" alt="" class="tool-icon"> Pack Name Generator</h2>
-    <p>Create unique pack names &amp; titles with meaning.</p>
-    <button onclick="location.href='packname';">Open Tool</button>
+  <div class="trait-card neutral" data-category="neutral" title="Click to re‑roll">
+    <span class="trait-label">Neutral</span>
+    <span class="trait-value" id="neutralTrait">—</span>
   </div>
-    <div class="tool-card">
-    <h2><img src="/tale-of-tails-tools/assets/icons/pencil.webp" alt="" class="tool-icon"> Trait Generator</h2>
-    <p>Get a balanced set of personality traits for your wolf.</p>
-    <button onclick="location.href='traits';">Open Tool <span class="badge-new">New!</span></button>
-  </div>
-  <div class="tool-card">
-    <h2><img src="/tale-of-tails-tools/assets/icons/acorn.webp" alt="" class="tool-icon"> More Tools</h2>
-    <p>Additional generators &amp; other tools are in the works.</p>
-    <button disabled>Coming Soon</button>
+  <div class="trait-card negative" data-category="negative" title="Click to re‑roll">
+    <span class="trait-label">Negative</span>
+    <span class="trait-value" id="negativeTrait">—</span>
   </div>
 </div>
 
-<div class="discord-cta">
-  <a href="https://discord.gg/kAu4btGGDJ" class="discord-button" target="_blank" rel="noopener noreferrer">
-    <img src="/tale-of-tails-tools/assets/icons/tail.webp" alt="" class="discord-icon">
-    Join the Discord
-  </a>
+
+<div class="btn-group">
+  <button id="generateTraitsBtn">
+    <img src="/tale-of-tails-tools/assets/icons/wolfpaw.webp" alt="" class="btn-icon"> Generate Traits
+  </button>
 </div>
+
+<div class="notes">
+  <strong>Notes</strong>
+	<p>- You can click on any trait to re-generate it separately from the rest.</p>
+	<p>- 'Human'-ish traits have been manually filtered out, if you spot one that doesn't make sense, let us know!</p>
+</div>
+
+<script src="/tale-of-tails-tools/scripts/traits.js"></script>
 
   </div>
 
